@@ -39,3 +39,36 @@ These nodes services are responsible for, fetching data from legacy backend, sen
 We are also using docker and kubernetes
 
 Unfortunately I can't show you demo of this project.
+
+### 2. Versioned text-based documents
+
+For storage optimization we should store only diffs, not whole document.
+
+Example of data structure:
+
+`{
+     id : "book_id",
+     changes : [
+        {
+             diff : diff_data,
+             timestamp : 1519240781258,
+             author_id : 1,
+             version: "X"
+        },
+        {
+             diff : diff_data,
+             timestamp : 1519240781259,
+             author_id : 2,
+             version: "Y"
+        }
+     ],
+     current: "current_document"
+ }`
+
+ My idea is to store the most actual document in the current property, for the previous version of the document we will store
+ only diffs.
+ This approach allows to:
+ - strive for storage size efficiency, we are only storing actual version of the document and diffs.
+ - save a version representing a document state.
+ - browsing history of the document, we need to just apply all diffs reversely to the version that interests us.
+ - we can visualize the changes between 2 versions of the document by combining all diffs between them.
