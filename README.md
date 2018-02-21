@@ -72,3 +72,11 @@ Example of data structure:
  - save a version representing a document state.
  - browsing history of the document, we need to just apply all diffs reversely to the version that interests us.
  - we can visualize the changes between 2 versions of the document by combining all diffs between them.
+
+ ### 3. Simple server processing queue
+ - npm i
+ - npm start (to start the server)
+ - npm run start-client (to start simple client, with the test case from your task)
+
+ My approach is generic, we can use different type of files, with different processing time, I used ratio of processing time to conclude which file
+ should be processed next.
