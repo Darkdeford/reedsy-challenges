@@ -1,0 +1,9 @@
+<div>
+    <select ng-model="$ctrl.currentDate.month" ng-change="$ctrl.onChange()">
+        <option ng-repeat="month in $ctrl.months track by $index" ng-value="{{month.id}}">{{::month.name}}</option>
+    </select>
+    <select ng-model="$ctrl.currentDate.day" ng-change="$ctrl.onChange()">
+        <option ng-repeat="n in $ctrl.getMonthDays() track by $index" ng-value="{{$index + 1}}">{{$index +1}}</option>
+    </select>
+    <input type="number" min="1900" max="2025" ng-model="$ctrl.currentDate.year" ng-change="$ctrl.onChange()"/>
+</div>

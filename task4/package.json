@@ -1,0 +1,25 @@
+{
+  "name": "angular-with-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/webpack-dev-server --content-base app"
+  },
+  "author": "Bartlomiej Loza <bartekloza@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-loader": "8.0.0-beta.0",
+    "raw-loader": "0.5.1",
+    "webpack": "3.11.0",
+    "webpack-dev-server": "2.11.1"
+  },
+  "dependencies": {
+    "@babel/core": "7.0.0-beta.39",
+    "@babel/preset-env": "7.0.0-beta.39",
+    "angular": "1.6.9",
+    "moment": "2.20.1"
+  }
+}
