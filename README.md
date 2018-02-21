@@ -46,7 +46,8 @@ For storage optimization we should store only diffs, not whole document.
 
 Example of data structure:
 
-`{
+```
+{
      id : "book_id",
      changes : [
         {
@@ -63,7 +64,8 @@ Example of data structure:
         }
      ],
      current: "current_document"
- }`
+ }
+ ```
 
  My idea is to store the most actual document in the current property, for the previous version of the document we will store
  only diffs.
@@ -81,10 +83,11 @@ Example of data structure:
  My approach is generic, we can use different type of files, with different processing time, I used ratio of processing time to conclude which file
  should be processed next.
 
- ###4 Angular 1.x component
+ ### 4. Angular 1.x component
+ - npm i
+ - npm start
 
-
- ###5 Bonus question
+ ### 5. Bonus question
  I didn't have time to start this task, but my approach would look like this:
  - Since there is no enough examples to conclude how Operation should be performed in different test cases,
  I would implement it step by step with TDD approach.

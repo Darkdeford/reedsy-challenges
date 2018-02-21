@@ -23,15 +23,12 @@ export default class AppTestController {
     }
 
     setNewTimestampValue() {
-        this.timestamp.$setViewValue(this.getTimestamp());
+        this.timestamp.$setViewValue(new Date(`${this.currentDate.year}-${this.currentDate.month}-${this.currentDate.day}`).getTime());
     }
 
-    getTimestamp() {
-        return new Date(`${this.currentDate.year}-${this.currentDate.month}-${this.currentDate.day}`).getTime();
-    }
 
     setProperDayValue() {
-        const lastMonthDay = moment(this.getTimestamp()).daysInMonth();
+        const lastMonthDay = moment(new Date(`${this.currentDate.year}-${this.currentDate.month}`).getTime()).daysInMonth();
         if (this.currentDate.day > lastMonthDay) {
             this.currentDate.day = lastMonthDay;
         }
